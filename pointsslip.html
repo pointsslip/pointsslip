@@ -75,7 +75,7 @@
 
     <h2>Drills</h2>
     <div class="item">
-        <label for="drills">Drills (points to be added later):</label>
+        <label for="drills">Any drill that takes 15 minutes or less. (40 points):</label>
         <input type="number" id="drills" value="0" min="0" oninput="calculateTotal()">
     </div>
 
@@ -85,7 +85,7 @@
         function calculateTotal() {
             const points = {
                 pagesRead: 10,
-                bonusPages: 25 / 50,
+                bonusPages: 25,
                 videos: 5,
                 passingTheoryCheckout: 3,
                 givingTheoryCheckout: 3,
@@ -94,7 +94,7 @@
                 wordClearing: 3,
                 wordClearingTime: 150,
                 theoryCoaching: 5,
-                drills: 0
+                drills: 40
             };
 
             const pagesRead = parseFloat(document.getElementById('pagesRead').value) || 0;
