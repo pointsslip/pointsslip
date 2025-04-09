@@ -1,5 +1,5 @@
 ﻿<dotnetnuke type="Package" version="5.0">
-  <packages><package name="AriCummings.OnlinePointsSlip" type="Module" version="0.9.4">
+  <packages><package name="AriCummings.OnlinePointsSlip" type="Module" version="1.0.3">
   <friendlyName>Online Points Slip</friendlyName>
   <description>To help Delphian School students calculate their daily points.</description>
   <iconFile>/Images/icon_extensions_32px.png</iconFile>
