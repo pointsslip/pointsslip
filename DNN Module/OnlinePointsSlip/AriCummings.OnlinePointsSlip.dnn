@@ -1,0 +1,59 @@
+﻿<dotnetnuke type="Package" version="5.0">
+  <packages><package name="AriCummings.OnlinePointsSlip" type="Module" version="0.9.4">
+  <friendlyName>Online Points Slip</friendlyName>
+  <description>To help Delphian School students calculate their daily points.</description>
+  <iconFile>/Images/icon_extensions_32px.png</iconFile>
+  <owner>
+    <name>Ari Cummings</name>
+    <organization>Ari Cummings</organization>
+    <url>delphigamerz.xyz</url>
+    <email>ari@delphigamerz.xyz</email>
+  </owner>
+  <license />
+  <releaseNotes>This package has no Release Notes.</releaseNotes>
+  <components>
+    <component type="Module">
+      <desktopModule>
+        <moduleName>AriCummings.OnlinePointsSlip</moduleName>
+        <foldername>AriCummings/OnlinePointsSlip</foldername>
+        <businessControllerClass />
+        <supportedFeatures />
+        <moduleDefinitions>
+          <moduleDefinition>
+            <friendlyName>AriCummings.OnlinePointsSlip</friendlyName>
+            <definitionName>AriCummings.OnlinePointsSlip</definitionName>
+            <defaultCacheTime>0</defaultCacheTime>
+            <moduleControls>
+              <moduleControl>
+                <controlKey />
+                <controlSrc>DesktopModules/AriCummings/OnlinePointsSlip/pointsslip.ascx</controlSrc>
+                <supportsPartialRendering>False</supportsPartialRendering>
+                <controlTitle />
+                <controlType>View</controlType>
+                <iconFile />
+                <helpUrl />
+                <supportsPopUps>False</supportsPopUps>
+                <viewOrder>0</viewOrder>
+              </moduleControl>
+            </moduleControls>
+          </moduleDefinition>
+        </moduleDefinitions>
+      </desktopModule>
+    </component>
+    <component type="File">
+      <files>
+        <basePath>DesktopModules\AriCummings\OnlinePointsSlip</basePath>
+        <file>
+          <name>pointsslip.ascx</name>
+        </file>
+        <file>
+          <name>pointsslip.html</name>
+        </file>
+        <file>
+          <name>readme.txt</name>
+        </file>
+      </files>
+    </component>
+  </components>
+</package></packages>
+</dotnetnuke>

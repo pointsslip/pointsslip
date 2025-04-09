@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Points Slip</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: white; /* Set text color to white */
+            background-color: #333; /* Optional: Dark background for better contrast */
+        }
+        .item {
+            margin-bottom: 10px;
+        }
+        .tally {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        h2 {
+            margin-top: 30px;
+            color: white; /* Ensure headers are also white */
+        }
+    </style>
+</head>
+<body>
+    <h1>Online Points Slip</h1>
+
+    <h2>Theory</h2>
+    <div class="item">
+        <label for="pagesRead">Pages Read (10 points per page):</label>
+        <input type="number" id="pagesRead" value="0" min="0" oninput="calculateTotal()">
+    </div>
+    <div class="item">
+        <label for="bonusPages">Bonus Points for Pages Read in One Day (25 points per 50 pages):</label>
+        <input type="number" id="bonusPages" value="0" min="0" oninput="calculateTotal()">
+    </div>
+    <div class="item">
+        <label for="videos">Videos/Live or Recorded Lectures/Teacher Instruction (5 points per minute):</label>
+        <input type="number" id="videos" value="0" min="0" oninput="calculateTotal()">
+    </div>
+
+    <h2>Checkouts</h2>
+    <div class="item">
+        <label for="passingTheoryCheckout">Passing a Theory Checkout (3 points per page):</label>
+        <input type="number" id="passingTheoryCheckout" value="0" min="0" oninput="calculateTotal()">
+    </div>
+    <div class="item">
+        <label for="givingTheoryCheckout">Giving a Theory Checkout (when passed, 3 points per page):</label>
+        <input type="number" id="givingTheoryCheckout" value="0" min="0" oninput="calculateTotal()">
+    </div>
+    <div class="item">
+        <label for="findingMUs">Finding MUs (5 points per word):</label>
+        <input type="number" id="findingMUs" value="0" min="0" oninput="calculateTotal()">
+    </div>
+    <div class="item">
+        <label for="checkoutOnDemo">Giving a Checkout on a Demo (3 points):</label>
+        <input type="number" id="checkoutOnDemo" value="0" min="0" oninput="calculateTotal()">
+    </div>
+
+    <h2>Word Clearing</h2>
+    <div class="item">
+        <label for="wordClearing">For Each Definition, Derivation, Idiom, or Synonym Fully Cleared (3 points):</label>
+        <input type="number" id="wordClearing" value="0" min="0" oninput="calculateTotal()">
+    </div>
+    <div class="item">
+        <label for="wordClearingTime">Giving/Receiving Word Clearing (150 points per hour):</label>
+        <input type="number" id="wordClearingTime" value="0" min="0" oninput="calculateTotal()">
+    </div>
+    <div class="item">
+        <label for="theoryCoaching">Theory Coaching - Student and Coach (5 points per line):</label>
+        <input type="number" id="theoryCoaching" value="0" min="0" oninput="calculateTotal()">
+    </div>
+
+    <h2>Drills</h2>
+    <div class="item">
+        <label for="drills">Any drill that takes 15 minutes or less. (40 points):</label>
+        <input type="number" id="drills" value="0" min="0" oninput="calculateTotal()">
+    </div>
+
+    <div class="tally" id="totalPoints">Total Points: 0</div>
+
+    <script>
+        function calculateTotal() {
+            const points = {
+                pagesRead: 10,
+                bonusPages: 25,
+                videos: 5,
+                passingTheoryCheckout: 3,
+                givingTheoryCheckout: 3,
+                findingMUs: 5,
+                checkoutOnDemo: 3,
+                wordClearing: 3,
+                wordClearingTime: 150,
+                theoryCoaching: 5,
+                drills: 0
+            };
+
+            const pagesRead = parseFloat(document.getElementById('pagesRead').value) || 0;
+            const bonusPages = parseFloat(document.getElementById('bonusPages').value) || 0;
+            const videos = parseFloat(document.getElementById('videos').value) || 0;
+            const passingTheoryCheckout = parseFloat(document.getElementById('passingTheoryCheckout').value) || 0;
+            const givingTheoryCheckout = parseFloat(document.getElementById('givingTheoryCheckout').value) || 0;
+            const findingMUs = parseFloat(document.getElementById('findingMUs').value) || 0;
+            const checkoutOnDemo = parseFloat(document.getElementById('checkoutOnDemo').value) || 0;
+            const wordClearing = parseFloat(document.getElementById('wordClearing').value) || 0;
+            const wordClearingTime = parseFloat(document.getElementById('wordClearingTime').value) || 0;
+            const theoryCoaching = parseFloat(document.getElementById('theoryCoaching').value) || 0;
+            const drills = parseFloat(document.getElementById('drills').value) || 0;
+
+            const totalPoints =
+                (pagesRead * points.pagesRead) +
+                (bonusPages * points.bonusPages) +
+                (videos * points.videos) +
+                (passingTheoryCheckout * points.passingTheoryCheckout) +
+                (givingTheoryCheckout * points.givingTheoryCheckout) +
+                (findingMUs * points.findingMUs) +
+                (checkoutOnDemo * points.checkoutOnDemo) +
+                (wordClearing * points.wordClearing) +
+                (wordClearingTime * points.wordClearingTime) +
+                (theoryCoaching * points.theoryCoaching) +
+                (drills * points.drills);
+
+            document.getElementById('totalPoints').innerText = `Total Points: ${totalPoints}`;
+        }
+    </script>
+</body>
+</html>
+
